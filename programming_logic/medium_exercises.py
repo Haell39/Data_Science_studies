@@ -5,7 +5,7 @@
  """
 
 # 2. 
-
+""" 
 vendas = [10, 5, 7, 89, 105]
 soma = 0
 for i in vendas:
@@ -13,3 +13,7 @@ for i in vendas:
 
 
 print(f'A soma dos valores da lista é {soma}')
+"""
+
+# 3.
+
