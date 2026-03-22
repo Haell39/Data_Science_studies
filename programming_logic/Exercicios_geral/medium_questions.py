@@ -78,8 +78,9 @@ print(a)
  """
 
 # 7.
-""" 
+
 lista_tempo = []
+nome_promotor = input("Digite Seu Nome: ")
 for i in range(1, 6):
     tempo = int(input(f"Diga o tempo da sua {i}ª visita: "))
     lista_tempo.append(tempo)
@@ -87,8 +88,8 @@ for i in range(1, 6):
 print(lista_tempo)
 
 media_lista_tempo = sum(lista_tempo) / len(lista_tempo)
-print(media_lista_tempo)
- """
+print(f'O promotor {nome_promotor} teve uma média de {media_lista_tempo}h nas 5 visitas!')
+
 
 # 8.
 """ 

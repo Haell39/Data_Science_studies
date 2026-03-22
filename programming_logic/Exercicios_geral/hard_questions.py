@@ -108,14 +108,16 @@ for i in nomes_e_valores:
         
 print(nomes_e_valores)
  """
-# 6. 
+# 6. B
+""" 
 nomes_e_valores = ["João", 150, "Maria", None, "Pedro", 250, None, "Ana", 300, None, "Carlos"]
 
+nome_valores_limpa = [i for i in nomes_e_valores if i != None]
+print(nome_valores_limpa)
 
- 
- 
- 
- 
+# [item for item in lista if condição]
+"""
+
 # 7.
 """ 
 promotores = {
@@ -150,18 +152,28 @@ media = count / len(notas_nps) * 100
 print(f'{media}%')
 """
  
+ # 9.
 """ 
 estoque_inicial = 50
 
 while True:
+    n = int(input("Digite a qntd desejada: "))
+    if n <= 0:
+        print('Valores negativos e nulos nao permitidos!')
+        continue
+    if n > estoque_inicial:
+        print("Valor fornecido maior que estoque atual!")
+        continue  
     if estoque_inicial > 0:
-        n = int(input("Digite a qntd desejada: "))
-        estoque_inicial = estoque_inicial -n
+        estoque_inicial = estoque_inicial - n
         print(estoque_inicial)
-    else:
+    if estoque_inicial == 0:
         print("Estoque zerado!")
         break
-"""
+    elif estoque_inicial < 0:
+        print('Estoque zerado!')
+        break
+ """
 
 # 10. 
 """ 
