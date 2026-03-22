@@ -99,23 +99,86 @@ else:
  """
 
 # 6.
+""" 
+nomes_e_valores = ["João", 150, "Maria", None, "Pedro", 250, None, "Ana", 300, None, "Carlos"]
+
+for i in nomes_e_valores:
+    if i == None:
+        nomes_e_valores.remove(i)
+        
+print(nomes_e_valores)
+ """
+# 6. 
+nomes_e_valores = ["João", 150, "Maria", None, "Pedro", 250, None, "Ana", 300, None, "Carlos"]
 
 
+ 
+ 
+ 
+ 
+# 7.
+""" 
+promotores = {
+    "João": 2500,
+    "Maria": 3100,
+    "Pedro": 1800,
+    "Ana": 2900,
+    "Carlos": 2200
+}
 
+promotor_maior = promotores.get("João")
+for chave, valor in promotores.items():
+    if valor > promotor_maior:
+        promotor_maior = valor
+    else:
+        continue
 
+print(promotor_maior)
+ """
+ 
+# 8.
+""" 
+notas_nps = [5, 4, 5, 3, 5, 5, 4, 2, 5, 5, 5, 3, 5, 5, 4, 5, 2, 5, 5, 5]
+count = 0
+for i in notas_nps:
+    if i == 5:
+        count = count + 1
+    else:
+        continue
 
+media = count / len(notas_nps) * 100
+print(f'{media}%')
+"""
+ 
+""" 
+estoque_inicial = 50
 
+while True:
+    if estoque_inicial > 0:
+        n = int(input("Digite a qntd desejada: "))
+        estoque_inicial = estoque_inicial -n
+        print(estoque_inicial)
+    else:
+        print("Estoque zerado!")
+        break
+"""
 
+# 10. 
+""" 
+def gondola_func(preco_estimado, preco_real):
+    diferenca = abs(preco_estimado - preco_real)
+    total = (preco_real + preco_estimado)
+    gondola_test = (diferenca / total) * 100
+    if gondola_test > 10:
+        print(f'A difereça é de {gondola_test:.2f}%')
+        return 'Alerta de Gondola'
+    else:
+        print(f'A difereça é de {gondola_test:.2f}%')
+        return 'Ok'
 
-
-
-
-
-
-
-
-
-
+print(gondola_func(50, 100))
+print(gondola_func(50, 61))
+ """
 
 
 

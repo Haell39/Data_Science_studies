@@ -1,0 +1,513 @@
+--- HARD ---
+"""
+vendas = [150.0, 500.0, 1250.50, 499.99, 720.0, 2300.0, 45.90, 890.10, 501.0, 300.0]
+
+
+nova_lista = []
+
+for i in vendas:
+    if i > 500:
+        nova_lista.append(i)
+
+print(nova_lista) 
+"""
+
+""" 
+nova_lista = [i for i in vendas if i > 500 ]
+print(nova_lista)
+"""
+
+# 2.
+""" 
+atrasos = [2, -1, 5, 0, -3, 1, 0, 4, -2, 3]
+
+def ruptura():
+    for i in atrasos:
+        if i > 0:
+            print('Ruptura')
+        else:
+            print('No prazo')
+
+
+print(ruptura())
+ """
+
+# 3.
+""" 
+vendas_promotores = [1500, 750, 450, 1100, 600, 950, 200, 1300, 500, 800]
+
+def bonus():
+    for i in vendas_promotores:
+        if i > 1000:
+            print(f'Para maior que 1000 vendas o bonus é de 10% {i} --> {i * 1.1}')
+        elif 500 < i <= 1000:
+            print(f'Vendas entre 501 e 1000 o bonus é 5% {i} --> {i * 1.05}')
+        else:
+            print(f'O bonus para menos de 501 vendas é 0 --> {i}')
+
+a = bonus()
+print(a)
+ """
+
+# 4.
+""" 
+pedidos = ["Pipoca", "Refrigerante", "Pipoca", "Chocolate", "Pipoca", "Chiclete", "Pipoca", "Refrigerante", "Pipoca", "Chiclete"]
+
+count = 0
+pedido_alvo = 'Pipoca'
+for i in pedidos:
+    if i == pedido_alvo:
+        count += 1
+
+print(f'{pedido_alvo} aparece {count} vezes na lista')
+ """
+
+# 5.
+"""
+precos_produtos = {
+    "Pipoca": 5.50,
+    "Refrigerante": 3.50,
+    "Chocolate": 4.00,
+    "Chiclete": 1.50,
+    "Água": 2.00,
+    "Suco": 4.50
+}
+
+
+user_ask = input("Qual produto voce quer: ")
+preco = precos_produtos.get(user_ask)
+
+if user_ask in precos_produtos:
+    print(f'O valor do seu pedido é {precos_produtos.get(user_ask)}')
+else:
+    print('Invalido, produto nao existe!')
+ """
+# 5. Busca flexivel maiúscula/minúscula
+""" 
+produto_pedido = input("Qual produto voce quer? ").lower()
+
+preco = None
+
+for chave, valor in precos_produtos.items():
+    if chave.lower() == produto_pedido.lower():
+        preco = valor
+        break
+    
+if preco:
+    print(f'O valor a pagar é {preco}')
+else:
+    print('produto nao existe')
+ """
+
+# 6.
+""" 
+nomes_e_valores = ["João", 150, "Maria", None, "Pedro", 250, None, "Ana", 300, None, "Carlos"]
+
+for i in nomes_e_valores:
+    if i == None:
+        nomes_e_valores.remove(i)
+        
+print(nomes_e_valores)
+ """
+# 7.
+""" 
+promotores = {
+    "João": 2500,
+    "Maria": 3100,
+    "Pedro": 1800,
+    "Ana": 2900,
+    "Carlos": 2200
+}
+
+promotor_maior = promotores.get("João")
+for chave, valor in promotores.items():
+    if valor > promotor_maior:
+        promotor_maior = valor
+    else:
+        continue
+
+print(promotor_maior)
+ """
+ 
+# 8.
+""" 
+notas_nps = [5, 4, 5, 3, 5, 5, 4, 2, 5, 5, 5, 3, 5, 5, 4, 5, 2, 5, 5, 5]
+count = 0
+for i in notas_nps:
+    if i == 5:
+        count = count + 1
+    else:
+        continue
+
+media = count / len(notas_nps) * 100
+print(f'{media}%')
+"""
+ 
+""" 
+estoque_inicial = 50
+
+while True:
+    if estoque_inicial > 0:
+        n = int(input("Digite a qntd desejada: "))
+        estoque_inicial = estoque_inicial -n
+        print(estoque_inicial)
+    else:
+        print("Estoque zerado!")
+        break
+"""
+
+# 10. 
+""" 
+def gondola_func(preco_estimado, preco_real):
+    diferenca = abs(preco_estimado - preco_real)
+    total = (preco_real + preco_estimado)
+    gondola_test = (diferenca / total) * 100
+    if gondola_test > 10:
+        print(f'A difereça é de {gondola_test:.2f}%')
+        return 'Alerta de Gondola'
+    else:
+        print(f'A difereça é de {gondola_test:.2f}%')
+        return 'Ok'
+
+print(gondola_func(50, 100))
+print(gondola_func(50, 61))
+print(gondola_func(0, 0))
+ """
+
+
+
+
+--- MEDIUM ---
+
+# 1. 
+
+""" for i in range(1, 11):
+    print(i)
+ """
+
+# 2. 
+""" 
+vendas = [10, 5, 7, 89, 105]
+soma = 0
+for i in vendas:
+    soma +=i
+
+
+print(f'A soma dos valores da lista é {soma}')
+"""
+
+# 3.
+""" 
+list = [5, 0, 12, 0, 8]
+
+count = 0
+for i in list:
+    if i == 0:
+        count +=1
+print(count)
+ """
+
+# 4.
+""" 
+def tabuada():
+    x = int(input("Digite um numero: "))
+    for n in range(1, 11):
+        print(f'{x} x {n} = {x * n}')
+
+tabuada()
+
+ """
+
+# 5.
+""" 
+list = ["doce", 'shampoo', 'Shampoo', 'xampu', 'play']
+count = 0
+for i in list:
+    if i == 'Shampoo':
+        count += 1
+        print(f'Ja tem o item {i} {count} vezes')
+
+ """
+# segundo jeito:
+""" 
+lista = ["doce", 'shampoo', 'Shampoo', 'xampu', 'play']
+count = 0
+for i in lista:
+    if i.lower() == 'shampoo':
+        count += 1
+        # print(f'Tem um total de {count} {i} na lista')
+
+print(f'O item shampoo aparece {count} vezes na lista')
+ """
+
+# 6.
+""" 
+vendas = [5, 0, 12, 0, 80, 70, 54, 1]       
+
+def maior_venda(vendas):
+    if vendas == []: #if not vendas:
+        return None
+    
+    maior = vendas[0]
+    for i in vendas:
+        if i > maior:
+            maior = i
+    return maior
+            
+a = maior_venda(vendas)
+print(a)
+ """
+
+# 7.
+""" 
+lista_tempo = []
+for i in range(1, 6):
+    tempo = int(input(f"Diga o tempo da sua {i}ª visita: "))
+    lista_tempo.append(tempo)
+
+print(lista_tempo)
+
+media_lista_tempo = sum(lista_tempo) / len(lista_tempo)
+print(media_lista_tempo)
+ """
+
+# 8.
+""" 
+name = input("Digite seu nome: ")
+
+print(name[::-1].capitalize())
+ """
+ 
+# 9. 
+
+""" 
+estados = [
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO",
+    "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
+    "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+]
+
+escolhidos = []
+for i in estados:
+    if i == 'PE':
+        pernambuco = i
+        escolhidos.append(pernambuco)
+    if i == 'SP':
+        saopaolo = i
+        escolhidos.append(saopaolo)
+        
+print(escolhidos)
+ """
+ 
+ # 9. B
+"""  
+estados_alvo = ['PE', 'SP']
+estados_verify = []
+estados = [
+    "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO",
+    "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI",
+    "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+] 
+
+# for i in estados:
+#     if i in estados_alvo:
+#         estados_verify.append(i)
+
+# estados_verify = [i for i in estados if i in estados_alvo] --> list comprehension
+
+print(estados_verify)
+ """
+
+# 10.
+
+""" 
+nota_ips = int(input("Digite sua nota IPS entre 1 e 5: "))
+while True:
+    if nota_ips > 5 or nota_ips < 1:
+        nota_ips = int(input("Digite sua nota IPS entre 1 e 5: "))
+    else:
+        print('Obrigado')
+        break
+
+ """
+
+--- EASY ---
+
+# 1.
+""" 
+a = int(input("Enter a number: "))
+b = int(input("Enter a number: "))
+
+print(a + b)
+
+ """
+# 2.
+
+""" 
+time = int(input("Enter time in DAYS: "))
+
+hours = time * 24
+print(f'{time} days in hours is {hours}h1')
+ """
+
+
+# 3.
+""" 
+a = int(input("Enter your note 1: "))
+b = int(input("Enter your note 2: "))
+c = int(input("Enter your note 3: "))
+
+media = a + b + c / 3
+media = (a + b + c) / 3
+print(f"{media:.2f}")
+
+ """
+
+""" 
+# 4.
+q = int(input("Enter a quantidade de estoque: "))
+if q < 10:
+    print('Estoque insuficiente!')
+else:
+    print('Ok!')
+ """
+
+
+""" 
+while True:
+    s = input("Quantidade disponível (ou 'sair' para encerrar): ")
+    if s.lower() == 'sair':
+        print("Encerrado.")
+        break
+    try:
+        q = int(s)
+    except ValueError:
+        print("Entrada inválida. Tente novamente.")
+        continue
+    if q >= 10:
+        print("Estoque suficiente.")
+        break
+    print("Estoque baixo. Informe novamente.") 
+"""
+
+""" 
+# 4. versao pro
+while True:
+    s = input("Quantidade ou sair pra sair: ")
+    if s.lower() == 'sair':
+        print("FIM")
+        break
+    q = int(input("Enter your product quantity: "))
+    if q >= 10:
+        print('Suficiente')
+        break
+    print('esoque baixo tente dnv!')
+
+ """
+
+#5.
+""" 
+frete = input('Digite o estado: ')
+if frete == 'PE':
+    print('R$ 20,00')
+else:
+    print('R$ 10,00')
+ """
+
+# 6. 
+
+""" 
+def par_impar():
+    n = int(input("Digite um numero: "))
+    print('par' if n % 2 == 0 else 'impar')
+
+
+par_impar()
+ """
+
+
+# 7.
+
+""" 
+def eh_maior():
+    age = int(input("Diga sua idade: "))
+    print('Adulto' if age >= 18 else 'criança')
+
+eh_maior()
+ """
+
+
+# 8. 
+
+""" 
+def bonus():
+    venda = int(input('Digite o valor de sua venda: '))
+    return venda * 1.1 if venda > 1000 else venda * 1
+
+print(f'{bonus():.2f}')
+ """
+
+# 9. 
+""" 
+estoque = int(input("Digite o saldo do estoque: "))
+
+print('positivo' if estoque > 0 else 'negativo' if estoque < 0 else 'Nulo')
+ """
+
+# 10.
+""" 
+a = int(input("Digite o preço do produto 1: "))
+b = int(input("Digite o preço do produto 2: "))
+
+print('Produto 1 maior' if a > b else 'Produto 2 maior' if b > a else 'Identicos') """
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
