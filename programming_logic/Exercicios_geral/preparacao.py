@@ -42,7 +42,7 @@ tabuada()
  """
 
 # 4. Somatorio
-
+"""
 def somatorio():
     lista = []
 
@@ -80,19 +80,22 @@ def somatorio():
     print(f'Os numeros da lista que são maiores que 50 são {lista_50}')
 
 
-    """ lista_ordenada = lista.sort()
+'''
+    lista_ordenada = lista.sort()
     print("A metade maior da lista abaixo: ")
     print(lista[-1])
     print(lista[-2])
     print(lista[-3])
     print(lista[-4])
-    print(lista[-5]) """
+    print(lista[-5]) 
+'''
 
 somatorio()
-
+"""
     
+#  BLOCO 4: Nível Avançado (Listas e Lógica de Processamento)
 
-
+# 5. Verificador de Palíndromos
 
 
 
