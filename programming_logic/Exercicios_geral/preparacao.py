@@ -29,8 +29,68 @@ def media_aritimetica():
 
 media_aritimetica()
 """
+# Bloco 3: Nivel Intermediário
+
+# 3. Tabuada
+""" 
+def tabuada():
+    n = int(input("Escolha um numero qualquer: "))
+    for i in range(1, 11):
+        print(f'{n} x {i} = {n * i}')
+
+tabuada()
+ """
+
+# 4. Somatorio
+
+def somatorio():
+    lista = []
+
+    for i in range(10):
+        n = int(input("Digite um numero qualquer: "))
+        lista.append(n)
+
+    soma = 0
+    for item in lista:
+        soma += item
+
+    print(f'A soma de todos numeros da lista é: {soma}')
+    # soma = sum(lista)
+    # print(soma)
+
+    maior = lista[0]
+    for item in lista:
+        if item > maior:
+            maior = item
+    
+    print(f'O Maior nomero na lista é: {maior}')
+
+    menor = lista[0]
+    for i in lista:
+        if i < menor:
+            menor = i
+    
+    print(f'O menor numero na lista é: {menor}')
+
+    lista_50 = []
+    for i in lista:
+        if i > 50:
+            lista_50.append(i)
+
+    print(f'Os numeros da lista que são maiores que 50 são {lista_50}')
 
 
+    """ lista_ordenada = lista.sort()
+    print("A metade maior da lista abaixo: ")
+    print(lista[-1])
+    print(lista[-2])
+    print(lista[-3])
+    print(lista[-4])
+    print(lista[-5]) """
+
+somatorio()
+
+    
 
 
 
